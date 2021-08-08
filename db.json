@@ -23,21 +23,39 @@
       "endDate": "2019-06-17T17:30:31.098Z",
       "comment": "Cool trip!",
       "createdBy": 2
+    },
+    {
+      "destination": "Porto",
+      "startDate": "2021-08-08T20:45:14.424Z",
+      "endDate": "2021-08-08T20:45:14.424Z",
+      "comment": "YAYYYY",
+      "createdBy": 1,
+      "id": "zi926ej0l"
     }
   ],
-
   "users": [
     {
       "id": 1,
       "name": "Sara",
       "type": "admin",
-      "trips": [{ "id": 1 }, { "id": 2 }]
+      "trips": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        }
+      ]
     },
     {
       "id": 2,
       "name": "Facu",
       "type": "manager",
-      "trips": [{ "id": 3 }]
+      "trips": [
+        {
+          "id": 3
+        }
+      ]
     },
     {
       "id": 3,

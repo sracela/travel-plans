@@ -21,6 +21,7 @@ h1, h2, h3 {
 ul {
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -31,4 +32,14 @@ li {
 input, button {
   padding: 8px;
   margin: 8px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  background-color:linen;
+  max-width: fit-content;
+  padding: 16px;
+  border-radius: 8px;
 }
