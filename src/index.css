@@ -27,3 +27,8 @@ ul {
 li {
   list-style: none;
 }
+
+input, button {
+  padding: 8px;
+  margin: 8px;
+}

@@ -1,0 +1,49 @@
+{
+  "trips": [
+    {
+      "id": 1,
+      "destination": "Madrid",
+      "startDate": "2019-05-01T17:30:31.098Z",
+      "endDate": "2019-05-15T17:30:31.098Z",
+      "comment": "Cool trip!",
+      "createdBy": 1
+    },
+    {
+      "id": 2,
+      "destination": "Tenerife",
+      "startDate": "2019-05-28T18:39:34.091Z",
+      "endDate": "2019-05-30T17:30:31.098Z",
+      "comment": "Cool trip!",
+      "createdBy": 1
+    },
+    {
+      "id": 3,
+      "destination": "Bologna",
+      "startDate": "2019-06-15T19:20:14.298Z",
+      "endDate": "2019-06-17T17:30:31.098Z",
+      "comment": "Cool trip!",
+      "createdBy": 2
+    }
+  ],
+
+  "users": [
+    {
+      "id": 1,
+      "name": "Sara",
+      "type": "admin",
+      "trips": [{ "id": 1 }, { "id": 2 }]
+    },
+    {
+      "id": 2,
+      "name": "Facu",
+      "type": "manager",
+      "trips": [{ "id": 3 }]
+    },
+    {
+      "id": 3,
+      "name": "Jesu",
+      "type": "regular",
+      "trips": []
+    }
+  ]
+}
