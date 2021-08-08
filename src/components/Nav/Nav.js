@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ greeting }) => {
+const Nav = ({ handleLogin }) => {
   return (
     <ul>
       <li>
@@ -20,7 +20,7 @@ const Nav = ({ greeting }) => {
         </Link>
       </li>
       <li>
-        <Link to="/login">
+        <Link to="/login" onClick={handleLogin}>
           Login/Logout
         </Link>
       </li>
