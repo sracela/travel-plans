@@ -8,7 +8,7 @@ const Trips = ({ trips, addTrip, editTrip, deleteTrip }) => {
     if (searchQuery === "") {
       return trips
     }
-    return trips.filter(trip => trip.destination.includes(searchQuery))
+    return trips.filter(trip => trip.destination.toLowerCase().includes(searchQuery.toLowerCase()))
   }
 
 
