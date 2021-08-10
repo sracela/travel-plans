@@ -5,5 +5,6 @@ import Users from "./Users/Users";
 import Nav from "./Nav/Nav";
 import Trip from "./Trip/Trip";
 import TripForm from "./TripForm/TripForm";
+import User from "./User/User";
 
-export { Login, Home, Trips, Users, Nav, Trip, TripForm };
+export { Login, Home, Trips, Users, Nav, Trip, TripForm, User };

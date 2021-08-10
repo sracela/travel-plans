@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react";
 import tripService from "./services/trips";
+import userService from "./services/users";
 import loginService from "./services/login";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { Login, Home, Users, Trips, Nav } from "./components";
 
 /**
  *
- * TODO: Change to async/await
- * TODO: Same with Users as with Trips
  * TODO: Material UI
  * TODO: Notification Component
  * TODO: Start date - End Date
  * TODO: Home (plan para un mes)
  * TODO: Tests
- * TODO: Add Redux 
+ * TODO: Change to async/await
+ * TODO: Tests
+ * TODO: Add Redux
+ * TODO: Users EDIT, DELETE, UPDATE
  * TODO: Login Authentication + Permisions
  * TODO: Tests
  * ?: Home, actual month and option to next month
@@ -22,12 +24,19 @@ import { Login, Home, Users, Trips, Nav } from "./components";
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [trips, setTrips] = useState([]);
+  const [users, setUsers] = useState([]);
   const [user, setUser] = useState(null);
   let history = useHistory();
 
   useEffect(() => {
     tripService.getAll().then((initialTrips) => {
       setTrips(initialTrips);
+    });
+  }, []);
+
+  useEffect(() => {
+    userService.getAll().then((initialUsers) => {
+      setUsers(initialUsers);
     });
   }, []);
 
@@ -40,14 +49,14 @@ const App = () => {
       console.log("Wrong credentials");
     }
     setUser(config);
-    setIsLoggedIn(true)
+    setIsLoggedIn(true);
     history.push("/");
   };
 
   const onLogout = () => {
     setUser(null);
-    setIsLoggedIn(false)
-  }
+    setIsLoggedIn(false);
+  };
 
   const addTrip = (tripObject) => {
     tripService
@@ -69,13 +78,6 @@ const App = () => {
     tripService.update(id, tripObject).then((response) => {
       setTrips(trips.map((trip) => (trip.id !== id ? trip : response)));
     });
-
-    setTrips(
-      trips.map((trip) => {
-        if (trip.id === id) return { ...tripObject, id };
-        return trip;
-      })
-    );
   };
 
   return (
@@ -86,7 +88,9 @@ const App = () => {
       <Switch>
         <Route
           path="/users"
-          render={() => (isLoggedIn ? <Users /> : <Redirect to="/login" />)}
+          render={() =>
+            isLoggedIn ? <Users users={users} /> : <Redirect to="/login" />
+          }
         />
         <Route
           path="/trips"
@@ -104,7 +108,7 @@ const App = () => {
           }
         />
         <Route path="/login">
-          <Login onLogin={onLogin}/>
+          <Login onLogin={onLogin} />
         </Route>
         <Route path="/">
           <Home

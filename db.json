@@ -36,30 +36,33 @@
   "users": [
     {
       "id": 1,
-      "name": "Sara",
+      "username": "Sara",
       "type": "admin",
       "trips": [
         {
-          "id": 1
+          "id": 1,
+          "destination": "Madrid"
         },
         {
-          "id": 2
+          "id": 2,
+          "destination": "Tenerife"
         }
       ]
     },
     {
       "id": 2,
-      "name": "Facu",
+      "username": "Facu",
       "type": "manager",
       "trips": [
         {
-          "id": 3
+          "id": 3,
+          "destination": "Bologna"
         }
       ]
     },
     {
       "id": 3,
-      "name": "Jesu",
+      "username": "Jesu",
       "type": "regular",
       "trips": []
     }
