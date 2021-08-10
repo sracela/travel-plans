@@ -1,28 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ handleLogin }) => {
+const Nav = ({ isLoggedIn, onLogout }) => {
   return (
     <ul>
       <li>
-        <Link to="/">
-          Home
-        </Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="/users">
-          Users
-        </Link>
+        <Link to="/users">Users</Link>
       </li>
       <li>
-        <Link to="/trips">
-          Trips
-        </Link>
+        <Link to="/trips">Trips</Link>
       </li>
       <li>
-        <Link to="/login" onClick={handleLogin}>
-          Login/Logout
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/login" onClick={onLogout}>Logout</Link>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
       </li>
     </ul>
   );

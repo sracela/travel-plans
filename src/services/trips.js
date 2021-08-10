@@ -1,6 +1,13 @@
 import axios from 'axios'
 const baseUrl = 'http://localhost:3001/trips'
 
+let token = null
+
+const setToken = newToken => {
+  // eslint-disable-next-line 
+  token = `bearer ${newToken}`
+}
+
 const getAll = () => {
   const request = axios.get(baseUrl)
   return request.then(response => response.data)
@@ -21,6 +28,6 @@ const remove = (id) => {
   return request.then(response => response.data)
 }
 
-const tripService = { getAll, create, update, remove }
+const tripService = { getAll, create, update, remove, setToken }
 
 export default tripService;

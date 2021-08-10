@@ -9,12 +9,12 @@
       "createdBy": 1
     },
     {
-      "id": 2,
       "destination": "Tenerife",
-      "startDate": "2019-05-28T18:39:34.091Z",
-      "endDate": "2019-05-30T17:30:31.098Z",
-      "comment": "Cool trip!",
-      "createdBy": 1
+      "startDate": "2021-08-08T21:48:27.949Z",
+      "endDate": "2021-08-08T21:48:27.949Z",
+      "comment": "mola el teide",
+      "createdBy": 1,
+      "id": 2
     },
     {
       "id": 3,
