@@ -1,9 +1,10 @@
 import React from "react";
 import { User } from "../../components";
+import Layout from "../Layout/Layout";
 
-const Users = ({ users, addUser, editUser, deleteUser }) => {
+const Users = ({ users, addUser, editUser, deleteUser, onLogout, isLoggedIn }) => {
   return (
-    <div>
+    <Layout onLogout={onLogout} isLoggedIn={isLoggedIn}>
       <h2>Users</h2>
       {/* <h3>Add New User</h3>
       <TripForm submit={addTrip} defaultValues={{}} /> */}
@@ -18,7 +19,7 @@ const Users = ({ users, addUser, editUser, deleteUser }) => {
           />
         ))}
       </ol>
-    </div>
+    </Layout>
   );
 };
 

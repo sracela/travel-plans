@@ -1,11 +1,13 @@
 import React from "react";
+import Layout from "../Layout/Layout";
 
-const Home = ({ greeting }) => {
+const Home = ({ greeting, onLogout, isLoggedIn }) => {
   return (
-    <div>
-      <h2>Home</h2>
+    <Layout onLogout={onLogout} isLoggedIn={isLoggedIn}>
+      {/* <p>{isLoggedIn ? `Hello ${user.username}` : "You are logged out!"}</p> */}
+      {/* <h1>Welcome to Travel Plans App</h1> */}
       <h3>{greeting}</h3>
-    </div>
+    </Layout>
   );
 };
 

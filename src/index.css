@@ -1,11 +1,11 @@
-body {
+/* body {
   margin: 0;
   padding: 24px;
   font: 16px "Century Gothic", Futura, sans-serif;
   background-color: #F7F7FC;
-}
+} */
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
@@ -32,9 +32,9 @@ li {
 input, button {
   padding: 8px;
   margin: 8px;
-}
+} */
 
-form {
+/* form {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -42,4 +42,4 @@ form {
   max-width: fit-content;
   padding: 16px;
   border-radius: 8px;
-}
+} */

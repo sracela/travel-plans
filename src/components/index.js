@@ -6,5 +6,7 @@ import Nav from "./Nav/Nav";
 import Trip from "./Trip/Trip";
 import TripForm from "./TripForm/TripForm";
 import User from "./User/User";
+import SignInSide from "./SignInSide/SignInSide";
+import Header from "./Header/Header";
 
-export { Login, Home, Trips, Users, Nav, Trip, TripForm, User };
+export { Login, Home, Trips, Users, Nav, Trip, TripForm, User, SignInSide, Header };

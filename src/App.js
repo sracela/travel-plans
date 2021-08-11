@@ -3,11 +3,14 @@ import tripService from "./services/trips";
 import userService from "./services/users";
 import loginService from "./services/login";
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
-import { Login, Home, Users, Trips, Nav } from "./components";
+import { Home, Users, Trips } from "./components";
+import SignInSide from "./components/SignInSide/SignInSide";
+import { makeStyles } from "@material-ui/core/styles";
 
 /**
- *
+ * TODO: Separar Copyright
  * TODO: Material UI
+ * TODO: Register
  * TODO: Notification Component
  * TODO: Start date - End Date
  * TODO: Home (plan para un mes)
@@ -16,12 +19,20 @@ import { Login, Home, Users, Trips, Nav } from "./components";
  * TODO: Tests
  * TODO: Add Redux
  * TODO: Users EDIT, DELETE, UPDATE
+ * TODO: Backend6t
  * TODO: Login Authentication + Permisions
  * TODO: Tests
  * ?: Home, actual month and option to next month
  */
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100vh",
+  },
+}));
+
 const App = () => {
+  const classes = useStyles();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [trips, setTrips] = useState([]);
   const [users, setUsers] = useState([]);
@@ -81,15 +92,21 @@ const App = () => {
   };
 
   return (
-    <div>
-      <Nav isLoggedIn={isLoggedIn} onLogout={onLogout} />
-      <p>{isLoggedIn ? `Hello ${user.username}` : "You are logged out!"}</p>
-      <h1>Welcome to Travel Plans App</h1>
+    <div className={classes.root}>
+      {/* <CssBaseline /> */}
       <Switch>
         <Route
           path="/users"
           render={() =>
-            isLoggedIn ? <Users users={users} /> : <Redirect to="/login" />
+            isLoggedIn ? (
+              <Users
+                users={users}
+                isLoggedIn={isLoggedIn}
+                onLogout={onLogout}
+              />
+            ) : (
+              <Redirect to="/login" />
+            )
           }
         />
         <Route
@@ -101,6 +118,8 @@ const App = () => {
                 addTrip={addTrip}
                 editTrip={editTrip}
                 deleteTrip={deleteTrip}
+                isLoggedIn={isLoggedIn}
+                onLogout={onLogout}
               />
             ) : (
               <Redirect to="/login" />
@@ -108,15 +127,18 @@ const App = () => {
           }
         />
         <Route path="/login">
-          <Login onLogin={onLogin} />
+          {/* <Login onLogin={onLogin} />*/}
+          <SignInSide onLogin={onLogin} />
         </Route>
         <Route path="/">
           <Home
             greeting={
               !isLoggedIn
                 ? "Please Log in to see posted Blogs"
-                : "Click on blogs in the navigation bar to see available blogs"
+                : "Click on Trips in the navigation bar to see all your trips"
             }
+            isLoggedIn={isLoggedIn}
+            onLogout={onLogout}
           />
         </Route>
       </Switch>
