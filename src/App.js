@@ -6,20 +6,25 @@ import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import { Home, Users, Trips } from "./components";
 import SignInSide from "./components/SignInSide/SignInSide";
 import { makeStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import CssBaseline from "@material-ui/core/CssBaseline";
 
 /**
- * TODO: Separar Copyright
- * TODO: Material UI
- * TODO: Register
- * TODO: Notification Component
- * TODO: Start date - End Date
- * TODO: Home (plan para un mes)
+ * TODO: Material UI - Trips
+ * TODO: Material UI - Users
+ * TODO: Material UI - Register
+ * TODO: Material UI - Notification Component
+ * TODO: Material UI - CALENDAR (Start date - End Date)
+ * TODO: Material UI - Home (plan para un mes)
+ * TODO: Cambiar a rutas relativos al menos compnents
+ * 
+ * TODO: Backend
+ * 
  * TODO: Tests
  * TODO: Change to async/await
  * TODO: Tests
  * TODO: Add Redux
  * TODO: Users EDIT, DELETE, UPDATE
- * TODO: Backend6t
  * TODO: Login Authentication + Permisions
  * TODO: Tests
  * ?: Home, actual month and option to next month
@@ -92,8 +97,8 @@ const App = () => {
   };
 
   return (
-    <div className={classes.root}>
-      {/* <CssBaseline /> */}
+    <Grid container className={classes.root}>
+      <CssBaseline />
       <Switch>
         <Route
           path="/users"
@@ -142,7 +147,7 @@ const App = () => {
           />
         </Route>
       </Switch>
-    </div>
+    </Grid>
   );
 };
 

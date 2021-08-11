@@ -8,5 +8,7 @@ import TripForm from "./TripForm/TripForm";
 import User from "./User/User";
 import SignInSide from "./SignInSide/SignInSide";
 import Header from "./Header/Header";
+import Layout from "./Layout/Layout";
+import Copyright from "./Copyright/Copyright";
 
-export { Login, Home, Trips, Users, Nav, Trip, TripForm, User, SignInSide, Header };
+export { Login, Home, Trips, Users, Nav, Trip, TripForm, User, SignInSide, Header, Layout, Copyright };
