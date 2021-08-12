@@ -11,8 +11,8 @@
     {
       "destination": "Tenerife",
       "startDate": "2021-08-08T21:48:27.949Z",
-      "endDate": "2021-08-08T21:48:27.949Z",
-      "comment": "mola el teide",
+      "endDate": "2021-08-12T19:00:37.472Z",
+      "comment": "Mola el Teide!!!",
       "createdBy": 1,
       "id": 2
     },
@@ -31,6 +31,14 @@
       "comment": "YAYYYY",
       "createdBy": 1,
       "id": "zi926ej0l"
+    },
+    {
+      "destination": "Argentina",
+      "startDate": "2021-08-12T18:57:36.415Z",
+      "endDate": "2021-08-12T18:57:44.090Z",
+      "comment": "molaaaaa",
+      "createdBy": 1,
+      "id": "e1bltwr95"
     }
   ],
   "users": [
