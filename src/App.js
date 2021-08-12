@@ -135,17 +135,19 @@ const App = () => {
           {/* <Login onLogin={onLogin} />*/}
           <SignInSide onLogin={onLogin} />
         </Route>
-        <Route path="/">
-          <Home
-            greeting={
-              !isLoggedIn
-                ? "Please Log in to see posted Blogs"
-                : "Click on Trips in the navigation bar to see all your trips"
-            }
-            isLoggedIn={isLoggedIn}
-            onLogout={onLogout}
-          />
-        </Route>
+        <Route
+          path="/"
+          render={() =>
+            isLoggedIn ? (
+              <Home 
+              isLoggedIn={isLoggedIn}
+              onLogout={onLogout}
+              />
+            ) : (
+              <Redirect to="/login" />
+            )
+          }
+        />
       </Switch>
     </Grid>
   );

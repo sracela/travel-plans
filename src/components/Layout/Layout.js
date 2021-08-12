@@ -10,6 +10,7 @@ import { Nav, Header } from "../../components";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    flexWrap: 'nowrap'
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
@@ -47,11 +48,7 @@ export default function Layout({ children, isLoggedIn, onLogout }) {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
-          {/* <Grid container spacing={3}> */}
-            {/* <Grid item xs={12}> */}
               {children}
-            {/* </Grid> */}
-          {/* </Grid> */}
           <Box pt={4}>
             <Copyright />
           </Box>

@@ -16,7 +16,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   image: {
-    backgroundImage: "url(https://source.unsplash.com/random?topics=travels)",
+    backgroundImage: "url(https://source.unsplash.com/1600x900/?trip,travel)",
     backgroundRepeat: "no-repeat",
     backgroundColor:
       theme.palette.type === "light"
@@ -76,6 +76,8 @@ export default function SignInSide({ onLogin }) {
               required
               fullWidth
               autoComplete="username"
+              label="Username"
+              id="username"
               autoFocus
               {...username}
             />
@@ -85,6 +87,7 @@ export default function SignInSide({ onLogin }) {
               required
               fullWidth
               {...password}
+              label="Password"
               id="password"
               autoComplete="current-password"
             />
